@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144.93 85.47">
+    <defs>
+        <radialGradient id="grad3"
+                        r="100%"
+                        gradientUnits="userSpaceOnUse"
+        >
+            <stop offset="0%" style="stop-color: '#ef4444', stop-opacity: 1"/>
+            <stop offset="6.25%" style="stop-color: '#f97316', stop-opacity: 1"/>
+            <stop offset="12.5%" style="stop-color: '#f59e0b', stop-opacity: 1"/>
+            <stop offset="18.75%" style="stop-color: '#eab308', stop-opacity: 1"/>
+            <stop offset="25%" style="stop-color: '#84cc16', stop-opacity: 1"/>
+            <stop offset="31.25%" style="stop-color: '#22c55e', stop-opacity: 1"/>
+            <stop offset="37.5%" style="stop-color: '#10b981', stop-opacity: 1"/>
+            <stop offset="43.75%" style="stop-color: '#14b8a6', stop-opacity: 1"/>
+            <stop offset="50%" style="stop-color: '#06b6d4', stop-opacity: 1"/>
+            <stop offset="56.25%" style="stop-color: '#0ea5e9', stop-opacity: 1"/>
+            <stop offset="62.5%" style="stop-color: '#3b82f6', stop-opacity: 1"/>
+            <stop offset="68.75%" style="stop-color: '#6366f1', stop-opacity: 1"/>
+            <stop offset="75%" style="stop-color: '#8b5cf6', stop-opacity: 1"/>
+            <stop offset="81.25%" style="stop-color: '#a855f7', stop-opacity: 1"/>
+            <stop offset="87.5%" style="stop-color: '#d946ef', stop-opacity: 1"/>
+            <stop offset="93.75%" style="stop-color: '#ec4899', stop-opacity: 1"/>
+            <stop offset="100%" style="stop-color: '#f43f5e', stop-opacity: 1"/>
+
+        </radialGradient>
+    </defs>
+    <path fill="url(#grad3)" d="M142.89,21.62l-46.2,8L111.2,0,78.49,3.87,67.24,27C56.86,45.33,44.61,53,28.15,57.34,21.25,59.18,0,62.19,0,62.19L2,74l46.18-8L41.91,79l11,4,33.5-68,4.31-.51L58.29,80.71l11,4.76s5.1-10.65,6.93-14.14c10.69-20.3,23.31-28.46,40.56-33,6.9-1.83,28.15-4.84,28.15-4.84Z"/>
+</svg>
