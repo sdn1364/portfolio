@@ -3,7 +3,6 @@
 import React, {useEffect, useState, useRef, MouseEventHandler, TouchEventHandler} from "react";
 import {motion} from 'framer-motion'
 import shapes from './Shapes';
-import verticalShapes from './VerticalShapes';
 
 const pathVariants = {
     hidden: {
@@ -77,7 +76,7 @@ const MainArt = ({className = ''}) => {
                 }} stroke="url(#grad1)">
 
                 {
-                    verticalShapes.map((item, index) => {
+                    shapes.map((item, index) => {
                         let delayFactor = 0.05;
 
                         return <motion.path key={index}
