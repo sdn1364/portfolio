@@ -1,7 +1,15 @@
-import React from 'react';
+import React, {ReactNode} from 'react';
 import {motion} from 'framer-motion';
 
-const SocialLink = ({children, to, title, className = '', delay = 0}) => {
+interface Props {
+    children: ReactNode;
+    to: string;
+    title: string;
+    className?: string;
+    delay?:number
+}
+
+const SocialLink = ({children, to, title, className = '', delay = 0}:Props) => {
     return (
         <motion.a
             initial={{

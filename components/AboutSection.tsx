@@ -1,8 +1,8 @@
 'use client';
 
 import React, {useRef, useEffect} from 'react';
-import Section from "./template/section";
-import Center from "./template/center";
+import Section from "./template/Section";
+import Center from "./template/Center";
 import {useInView} from "framer-motion"
 import Image from "next/image";
 import MyPhoto from "../public/myphoto.jpg";
@@ -30,7 +30,7 @@ const AboutSection = () => {
                                     transition: "all 0.9s cubic-bezier(0.17, 0.55, 0.55, 1) 0.5s"
                                 }}
                     >
-                        <Image className="w-full h-auto" src={MyPhoto}/>
+                        <Image className="w-full h-auto" src={MyPhoto} alt='my photo'/>
 
                     </motion.div>
                 </div>
@@ -42,7 +42,7 @@ const AboutSection = () => {
                     }}
                     className="xl:w-1/2 space-y-5 p-10">
                     <h1 className="font-orbitron text-3xl">Who am I?</h1>
-                    <p className="xl:w-1/2 text-justify">I am a self taught web developer with a strong background in graphic design. I love working hard and long hour to get the result I desire. I am a fast learner and always eager to learn new thing as I learnt all of my skills all by myself. I am so passionate about my client's projects as if they are my own and try to do the best work I would ever can.</p>
+                    <p className="xl:w-1/2 text-justify">I am a self taught web developer with a strong background in graphic design. I love working hard and long hour to get the result I desire. I am a fast learner and always eager to learn new thing as I learnt all of my skills all by myself. I am so passionate about my client&apos;s projects as if they are my own and try to do the best work I would ever can.</p>
                 </motion.div>
             </Center>
             <Center className="absolute bottom-7 right-8 flex items-center cursor-pointer">

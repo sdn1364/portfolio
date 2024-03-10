@@ -1,6 +1,9 @@
-import React from 'react';
-import {motion} from "framer-motion";
-import verticalShapes from "./verticalShapes";
+'use client';
+
+import React, {useEffect, useState, useRef, MouseEventHandler, TouchEventHandler} from "react";
+import {motion} from 'framer-motion'
+import shapes from './Shapes';
+import verticalShapes from './VerticalShapes';
 
 const pathVariants = {
     hidden: {
@@ -12,11 +15,40 @@ const pathVariants = {
         pathLength: 1,
     }
 }
-const MainVertical = ({className = ""}) => {
+
+
+const MainArt = ({className = ''}) => {
+
+    const [x, setX] = useState(0)
+    const [y, setY] = useState(0)
+    const [width, setWindowWidth] = useState(0)
+
+    useEffect(
+        () => {
+            const update = (e: MouseEvent | TouchEvent) => {
+                const clientX = e instanceof MouseEvent ? e.clientX : e.touches[0].clientX;
+                const clientY = e instanceof MouseEvent ? e.clientY : e.touches[0].clientY;
+
+                setX(Math.round((clientX / window.innerWidth) * 100));
+                setY(Math.round((clientY / window.innerHeight) * 100));
+            };
+            window.addEventListener('mousemove', update)
+            window.addEventListener('touchmove', update)
+            return () => {
+                window.removeEventListener('mousemove', update)
+                window.removeEventListener('touchmove', update)
+            }
+        },
+        [setX, setY]
+    )
+
+
     return (
-        <svg className={className} viewBox="0 0 339 396" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg className={className} viewBox="0 0 1657 530" fill="none">
             <defs>
-                <radialGradient id="verticalGradient"
+                <radialGradient id="grad1"
+                                cx={`${x}%`} cy={`${y}%`}
+                                r="100%"
                                 gradientUnits="userSpaceOnUse"
                 >
                     <stop offset="0%" style={{stopColor: '#ef4444', stopOpacity: 1}}/>
@@ -42,28 +74,30 @@ const MainVertical = ({className = ""}) => {
             <motion.g
                 transition={{
                     staggerChildren: 0.5
-                }} stroke="url(#verticalGradient)">
+                }} stroke="url(#grad1)">
 
                 {
-                    Object.keys(verticalShapes).map((item) => {
+                    verticalShapes.map((item, index) => {
                         let delayFactor = 0.05;
-                        return <motion.path key={item}
+
+                        return <motion.path key={index}
                                             variants={pathVariants}
                                             initial="hidden"
                                             animate="visible"
                                             transition={{
                                                 duration: 2,
                                                 ease: 'easeInOut',
-                                                delay: delayFactor * item
+                                                delay: delayFactor * index
                                             }}
-                                            d={verticalShapes[item]['path']}
+                                            d={item.path}
                                             strokeLinecap="round"
                                             strokeLinejoin="round"/>
                     })
                 }
             </motion.g>
         </svg>
-    )
-}
-export default MainVertical;
+    );
+};
+
+export default MainArt;
 

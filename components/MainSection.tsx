@@ -1,9 +1,9 @@
 'use client';
 
 import React, {useEffect, useState} from 'react';
-import Section from "./template/section";
-import Center from "./template/center";
-import MainArt from "./art/mainArt";
+import Section from "./template/Section";
+import Center from "./template/Center";
+import MainArt from "./art/MainArt";
 import MainVerticalArt from "./art/MainVertical";
 import {motion} from "framer-motion";
 import DownArrow from "./template/DownArrow";

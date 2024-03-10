@@ -1,6 +1,6 @@
 import React from "react";
 
-const Githaub = ()=>{
+const Github = ()=>{
     return (
         <svg className="hover:text-violet-500 " viewBox="0 0 496 512">
             <path className="fill-current"
@@ -8,4 +8,4 @@ const Githaub = ()=>{
         </svg>
     )
 }
-export default Githaub;
+export default Github;

@@ -1,8 +1,8 @@
 'use client';
 
 import React from 'react';
-import Section from "./template/section";
-import Center from "./template/center";
+import Section from "./template/Section";
+import Center from "./template/Center";
 import {motion} from "framer-motion";
 import Image from "next/image";
 import MyPhoto from "../public/myphoto.jpg";
