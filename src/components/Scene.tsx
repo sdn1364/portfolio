@@ -1,17 +1,18 @@
 import { Environment } from "@react-three/drei";
 import { Canvas } from "@react-three/fiber";
-import { Suspense, useEffect, useState } from "react";
-import Block from "./models/Blok";
-import H from "./models/H";
-import O from "./models/O";
-import S from "./models/S";
-import E from "./models/E";
-import Y from "./models/Y";
-import L from "./models/L";
-import Triangle from "./models/Triangle";
-import Dot from "./models/Dot";
-import D from "./models/D";
-import A from "./models/A";
+import { lazy, Suspense, useEffect, useState } from "react";
+
+const Block = lazy(() => import("./models/Blok"));
+const H = lazy(() => import("./models/H"));
+const O = lazy(() => import("./models/O"));
+const S = lazy(() => import("./models/S"));
+const E = lazy(() => import("./models/E"));
+const Y = lazy(() => import("./models/Y"));
+const L = lazy(() => import("./models/L"));
+const Triangle = lazy(() => import("./models/Triangle"));
+const Dot = lazy(() => import("./models/Dot"));
+const D = lazy(() => import("./models/D"));
+const A = lazy(() => import("./models/A"));
 
 interface MousePosition {
   x: number;

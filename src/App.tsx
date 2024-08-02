@@ -1,25 +1,24 @@
-import LinkedInLogoIcon from "@/assets/icons/linkedIn.svg";
-import DribbbleIcon from "@/assets/icons/dribbble.svg";
-import GithubIcon from "@/assets/icons/github.svg";
-import Email from "@/assets/icons/email.svg";
 import photo from "@/assets/image.jpg";
 import Particles from "./components/magicui/Particles";
-import Scene from "./components/Scene";
 import { VelocityScroll } from "./components/magicui/ScrollText";
 import { IconEmail } from "./components/icons/IconEmail";
 import { IconGithub } from "./components/icons/IconGithub";
 import { IconDribbble } from "./components/icons/IconDribbble";
 import { IconLinkedIn } from "./components/icons/IconLinkedIn";
+import { lazy, Suspense } from "react";
+
+const Scene = lazy(() => import("./components/Scene"));
 
 function App() {
   return (
     <div className="w-full h-auto flex flex-col items-center bg-[#212226]  ">
-      {/* <div className="w-full h-auto   bg-[#212226]  flex flex-col items-center"> */}
       <Particles
         quantity={300}
         className="w-full h-full bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-[#3B1559] via-60% via-[#212226] to-[#212226] absolute top-0 left-0 z-0 bg-no-repeat"
       />
-      <Scene />
+      <Suspense fallback={""}>
+        <Scene />
+      </Suspense>
       <div className="w-full mt-10">
         <VelocityScroll
           default_velocity={0.5}
