@@ -31,7 +31,6 @@ const Blok = (props: { color?: string; [key: string]: any }) => {
       {...props}
       dispose={null}
     >
-      <meshBasicMaterial color={props.color} attach="material" />
       <primitive object={block} />
     </mesh>
   );
