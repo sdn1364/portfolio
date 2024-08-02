@@ -44,11 +44,28 @@ const Scene = () => {
 
   return (
     <div className="w-full h-screen relative">
-      <div className="text-stone-200 absolute top-[5%] left-[8%] font-titillium font-bold text-9xl">
-        Front-end
-      </div>
-      <div className="text-stone-200 absolute bottom-[8%] right-[8%] font-titillium font-bold text-9xl">
-        Developer
+      <div className="absolute w-full h-screen flex flex-col justify-between">
+        <div className="text-stone-200 font-titillium font-[900] text-9xl w-full	flex flex-row items-baseline justify-between top-0 ">
+          <span>F</span>
+          <span>R</span>
+          <span>O</span>
+          <span>N</span>
+          <span>T</span>
+          <span>-</span>
+          <span>E</span>
+          <span>N</span>
+          <span>D</span>
+        </div>
+        <div className="text-stone-200 font-titillium font-[900] text-9xl flex flex-row items-baseline justify-between	bottom-0">
+          <span>E</span>
+          <span>N</span>
+          <span>G</span>
+          <span>I</span>
+          <span>N</span>
+          <span>E</span>
+          <span>E</span>
+          <span>R</span>
+        </div>
       </div>
       <Canvas shadows>
         <Suspense fallback={null}>
