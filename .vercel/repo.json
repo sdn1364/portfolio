@@ -1,0 +1,11 @@
+{
+  "remoteName": "origin",
+  "projects": [
+    {
+      "id": "prj_ggSgTXp1loynVf1NJEaztWULWEQT",
+      "name": "portfolio",
+      "directory": ".",
+      "orgId": "team_g71X1y3ik26OAeRcx8zGb2cB"
+    }
+  ]
+}
