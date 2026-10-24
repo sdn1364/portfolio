@@ -1,0 +1,36 @@
+name: Branch name check
+
+on:
+    pull_request:
+        branches: [main, develop]
+        types: [opened, reopened, synchronize, edited]
+
+jobs:
+    check-branch-name:
+        name: Check branch name
+        runs-on: ubuntu-latest
+        steps:
+            - name: Validate source branch for target branch
+              env:
+                  HEAD_REF: ${{ github.head_ref }}
+                  BASE_REF: ${{ github.base_ref }}
+              run: |
+                  echo "PR: $HEAD_REF -> $BASE_REF"
+
+                  if [ "$BASE_REF" = "main" ]; then
+                    if [[ "$HEAD_REF" =~ ^release/ ]]; then
+                      echo "OK: release/* into main"
+                      exit 0
+                    fi
+                    echo "::error::Only release/* branches can be merged into main (got '$HEAD_REF')."
+                    exit 1
+                  fi
+
+                  if [ "$BASE_REF" = "develop" ]; then
+                    if [[ "$HEAD_REF" =~ ^feature/ ]]; then
+                      echo "OK: feature/* into develop"
+                      exit 0
+                    fi
+                    echo "::error::Only feature/* branches can be merged into develop (got '$HEAD_REF')."
+                    exit 1
+                  fi
